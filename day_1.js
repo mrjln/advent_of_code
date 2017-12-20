@@ -1,7 +1,15 @@
 function captcha(x){
   x = x.split("")
 
-  return x
+function checkNextIsSameNumber(value,index,x){
+      if (x[index] === x[index+1] || x[index] === x[index-1]) {
+        return true
+      }
+      return false
+}
+
+  var filteredArray = x.filter(checkNextIsSameNumber);
+  return filteredArray
 
 }
 
