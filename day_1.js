@@ -14,7 +14,6 @@ function checkNextIsSameNumber(value,index,x){
       return false
 }
 
-
   var filteredArray = x.filter(checkNextIsSameNumber);
 
   function getSum(total, num) {
