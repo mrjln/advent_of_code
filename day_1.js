@@ -2,7 +2,7 @@ function captcha(x){
   x = x.split("")
 
 function checkNextIsSameNumber(value,index,x){
-      if (x[index] === x[index+1] || x[index] === x[index-1]) {
+      if (x[index] === x[index+1]|| x[index] === x[index-1]) {
         return true
       }
       return false
