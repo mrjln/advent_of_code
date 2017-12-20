@@ -1,5 +1,6 @@
 function captcha(x){
   var result = []
+  var looptimes = 0
 
   function getSum(total, num) {
       return total + num;
@@ -7,26 +8,40 @@ function captcha(x){
 
     for(var i = 0; i <= x.length-1; i++){
       var row = x[i]
-      row = row.split("\n").map(function(item) {
+      row = row.split("\t").map(function(item) {
         return parseInt(item, 10);
       });
+      console.log("ROW:", row)
 
-      var  min_row = row
-      var min = Math.min(...min_row)
+      var index_a
+      var index_b
+      if(row[i] % row[i + j] === 0){ return row[i] / row[i + j]}
 
-      var max_row = row
-      var max = Math.max(...max_row);
+      var modulo = row.filter()
 
-    result.push(max - min)
+      console.log("MODULO TRUE:", modulo)
+
+
 
     }
 
-  var total = result.reduce(getSum)
-  return total
-  console.log(total)
+    function findModulo(value, index, array){
+      var i = 1;
+      while (i <= array.length-1) {
+        console.log("VALUE :", value)
+        if (value % array[index+i] === 0 ){ return true }
+        return false
+        looptimes++
+        i++
+        }
+      }
+
+
+  //var total = result.reduce(getSum)
+  //return total
+
 
 }
-
 
 
 var input = ["409	194	207	470	178	454	235	333	511	103	474	293	525	372	408	428",
@@ -45,6 +60,10 @@ var input = ["409	194	207	470	178	454	235	333	511	103	474	293	525	372	408	428",
 "140	1005	2063	3048	3742	3361	117	93	2695	1529	120	3480	3061	150	3383	190",
 "489	732	57	75	61	797	266	593	324	475	733	737	113	68	267	141",
 "3858	202	1141	3458	2507	239	199	4400	3713	3980	4170	227	3968	1688	4352	4168"]
+
+/*["5 9 2 8",
+"9 4 7 3",
+"3 8 6 5"] */
 
 
 console.log(captcha(input));
